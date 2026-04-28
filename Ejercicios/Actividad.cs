@@ -17,5 +17,15 @@ namespace Ejercicios
         public int Resto(int A, int B) {
            return A % B;
         }
+        /*for (A = 0; A <= 75; A++) {
+             for (B = 0; B <= 22; B++) {
+               if (A > 5 && A< 75) {
+                  if (B > 2 && B< 22) {
+                     Console.WriteLine("*");
+                  }else{
+                      Console.WriteLine(" ");
+                        }
+                  }
+         */
     }
 }

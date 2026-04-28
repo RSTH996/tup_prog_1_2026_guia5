@@ -11,11 +11,12 @@ namespace Ejercicios
         
         static void Main(string[] args)
         {
-            int A=0, B=0, Opcion, Tot = 0;
+            int A, B, Opcion, Tot = 0;
             ActividadC5 A1 = new ActividadC5();
 
             Console.WriteLine("Seleccione a que actividad quiere entrar");
-            Console.WriteLine("Precione 1 para la actividad 1 (suma de dos Números)");
+            Console.WriteLine("Precione 1 para la actividad 1 (Suma de dos Números)");
+            Console.WriteLine("Precione 2 para la actividad 2 (Macro de pantalla) copiado de internet");
             Console.WriteLine("Precione 3 para la actividad 3 (Promedio de 10 Números)");
             Console.WriteLine("Precione 5 para la actividad 5 (Número Primos)");
 
@@ -30,6 +31,26 @@ namespace Ejercicios
                     Console.WriteLine("Escriba el Segundo número");
                     B = Convert.ToInt16(Console.ReadLine());
                     Console.WriteLine($"La suma de {A} y de {B} es: " + A1.Suma(A, B));
+                    break;
+                case 2:
+                    int Ancho, Alto; string Asteriscos = null;
+
+                    Console.Write("Escriba el ancho: "); // Pedimos la anchura.
+                    if (!int.TryParse(Console.ReadLine(), out Ancho))
+                        return;
+                    Console.Write("Escriba el alto: "); // Pedimos altura
+                    if (!int.TryParse(Console.ReadLine(), out Alto))
+                        return;
+
+                    Asteriscos = new string('*', Ancho); // Creamos los asteriscos bonitos.
+                    for (A = 0; A < Alto; A++)
+                    {
+                        // Imprimimos asteriscos como sea necesario.
+                        if (A == 0 || A == (Alto - 1))
+                            Console.WriteLine(Asteriscos);
+                        else
+                            Console.WriteLine("*{0," + (Ancho - 2) + "}*", ' ');
+                    }
                     break;
                 case 3:
                     for (Opcion = 1; Opcion <= 10; Opcion++)
@@ -57,8 +78,7 @@ namespace Ejercicios
                     }else{
                         Console.WriteLine($"El valor de {A} no es Primo");
                     }
-                    break;
-                
+                    break;                
                 default:
                     Console.WriteLine("Nha, es broma, esta actividad no exite");
                     break;
