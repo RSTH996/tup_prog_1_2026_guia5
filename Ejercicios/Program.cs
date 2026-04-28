@@ -11,7 +11,7 @@ namespace Ejercicios
         
         static void Main(string[] args)
         {
-            int A, B, Opcion, Tot = 0;
+            int A=0, B=0, Opcion, Tot = 0;
             ActividadC5 A1 = new ActividadC5();
 
             Console.WriteLine("Seleccione a que actividad quiere entrar");
@@ -45,17 +45,20 @@ namespace Ejercicios
                     Console.WriteLine("Escribe un número para saber si es primo o no");
                     A = Convert.ToInt32(Console.ReadLine());                    
                     B = 2;
+                    //Inicio de iteracion hasta que el valor A%B de resto 0
                     while (Tot != 0){                        
                         Tot = A1.Resto(A, B);
-                        Console.WriteLine($"Vuelta {B} con resto {Tot}");
+                        Console.WriteLine($"Vuelta {B} con {A} / {B} resto {Tot}");
                         B = B + 1;
                     };
+                    //se usa la condicion de diferente para la realizacion correcta del IF
                     if (B != A){
                         Console.WriteLine($"El valor de {A} es Primo");
                     }else{
                         Console.WriteLine($"El valor de {A} no es Primo");
                     }
                     break;
+                
                 default:
                     Console.WriteLine("Nha, es broma, esta actividad no exite");
                     break;
